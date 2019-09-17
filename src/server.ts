@@ -1,7 +1,6 @@
 import fastify from 'fastify';
-
 import { Server, IncomingMessage, ServerResponse } from 'http';
-
+import startMongo from './infrastructure/mongoDB/client';
 
 const server: fastify.FastifyInstance<
   Server,
@@ -12,6 +11,7 @@ const server: fastify.FastifyInstance<
 
 const start = async () => {
   try {
+    await startMongo();
     await server.listen(3005, '0.0.0.0');
   } catch (err) {
     console.log(err);
