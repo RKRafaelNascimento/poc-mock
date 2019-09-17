@@ -1,12 +1,30 @@
-const a: any = 'Hello World';
-const b = 'azul';
-const c = a + b;
+import fastify from 'fastify';
 
-console.log(b);
-console.log(a);
-console.log(c);
+import { Server, IncomingMessage, ServerResponse } from 'http';
 
 
-export {
-  a, b,
+const server: fastify.FastifyInstance<
+  Server,
+  IncomingMessage,
+  ServerResponse
+> = fastify();
+
+
+const start = async () => {
+  try {
+    await server.listen(3005, '0.0.0.0');
+  } catch (err) {
+    console.log(err);
+    server.log.error(err);
+    process.exit(1);
+  }
 };
+
+process.on('uncaughtException', (error) => {
+  console.error(error);
+});
+process.on('unhandledRejection', (error) => {
+  console.error(error);
+});
+
+start();
