@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "fastify": "^2.8.0",
+    "fastify-plugin": "^1.6.0",
     "mongoose": "^5.7.1"
   }
 }

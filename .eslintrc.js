@@ -3,7 +3,7 @@ module.exports = {
     es6: true,
     node: true
   },
-  extends: ["plugin:@typescript-eslint/recommended", "prettier/@typescript-eslint","airbnb-base"],
+  extends: ["airbnb-base"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly"
@@ -17,6 +17,14 @@ module.exports = {
   rules: {
     "class-methods-use-this": "off",
     "no-param-reassign": "off",
-    "camelcase": "off"
-  }
+    "camelcase": "off",
+    "import/prefer-default-export": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
 };
