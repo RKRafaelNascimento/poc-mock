@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import Ibalance from '../types/IBalance';
 
 const balanceSchema = new mongoose.Schema({
   phoneNumber: { type: String, index: true, unique: true },
@@ -6,6 +7,6 @@ const balanceSchema = new mongoose.Schema({
   type: String,
 });
 
-const balance = mongoose.model('balances', balanceSchema);
+const balance = mongoose.model<Ibalance>('balances', balanceSchema);
 
 export { balanceSchema, balance };

@@ -1,7 +1,7 @@
 import { balanceRepository } from '../repositories/index';
 
-const find = async () => balanceRepository.find();
+const find = () => balanceRepository.find();
 
-const create = async () => balanceRepository.create();
+const create = () => balanceRepository.create();
 
 export { find, create };

@@ -1,8 +1,9 @@
 import { balance } from '../models/balance';
+import IBalance from '../types/IBalance';
 
-const find = async () => balance.find();
+const find = () => balance.find();
 
-const create = async () => balance.create();
+const create = () => balance.create();
 
 export {
   find,

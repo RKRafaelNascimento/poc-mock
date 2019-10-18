@@ -1,6 +1,5 @@
 
 import { balanceService } from '../services/index';
-
 import { errors } from '../utils/body';
 
 async function balanceRouter(fastify, options) {
@@ -9,6 +8,7 @@ async function balanceRouter(fastify, options) {
       const response = await balanceService.find();
       reply.status(200).send(response);
     } catch (error) {
+      reply.status(error.status);
       return errors(error);
     }
   });
