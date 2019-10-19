@@ -1,3 +1,3 @@
-import * as balanceRepository from './balanceRepository';
+import * as oficioRepository from './oficioRepository'
 
-export { balanceRepository };
+export { oficioRepository };

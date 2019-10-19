@@ -1,3 +1,3 @@
-import * as balanceService from './balanceService';
+import * as oficioService from './oficioService'
 
-export { balanceService };
+export { oficioService };

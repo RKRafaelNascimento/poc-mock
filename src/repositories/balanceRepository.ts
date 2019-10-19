@@ -1,5 +1,4 @@
 import { balance } from '../models/balance';
-import IBalance from '../types/IBalance';
 
 const find = () => balance.find();
 
